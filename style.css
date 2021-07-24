@@ -1,0 +1,137 @@
+body {
+  padding: 5px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  padding: 10px;
+}
+
+form div {
+  display: block;
+}
+
+label {
+  display: inline-flex;
+  position: relative;
+}
+
+input {
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"],
+select {
+  height: 25px;
+  font-size: 1em;
+  padding: 4px;
+  width: 95%;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  margin-top: 50px;
+  padding: 10px;
+  height: inherit;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+select {
+  height: 33px;
+}
+
+@media screen and (min-width: 420px) {
+  input[type="text"],
+  input[type="number"],
+  input[type="submit"],
+  select {
+    width: 200px;
+  }
+  label {
+    width: 150px;
+  }
+  .radioAndCheckBoxLabel {
+    width: inherit;
+  }
+}
+/* ADDED CSS */
+.form-container {
+  background-color: rgb(245, 237, 237);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  align-content: center;
+  justify-content: center;
+  padding: 30px 40px 30px 40px;
+  margin: auto;
+}
+
+input[type="tel"],
+input[type="email"],
+select {
+  height: 25px;
+  font-size: 1em;
+  padding: 4px;
+  width: 50%;
+  border: 1px solid #ccc;
+}
+input[type="date"],
+input[tyope="radio"] select {
+  height: 25px;
+  font-size: 1em;
+  padding: 4px;
+  width: 50%;
+  border: 1px solid #ccc;
+}
+.emergencyPersonSection {
+  border-top: 0.2rem black solid;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.emergencyPersonSection2 {
+  border-top: 0.2rem black solid;
+  padding-top: 2rem;
+}
+input[type="radio"],
+label {
+  color: rgb(0, 0, 0);
+  display: inline;
+}
+.hide {
+  display: block;
+}
+
+.if-error span {
+  display: none;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  background-color: #f4dcdc;
+  padding: 1px;
+  border-radius: 3px;
+  width: 300px;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+.if-error.error span {
+  display: block;
+}
+.if-error.error input {
+  border: 1px solid #ff0000;
+}
+.if-error.success input {
+  border-color: white;
+}
+#OtherText {
+  display: none;
+}

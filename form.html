@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript" src="formValidation.js"></script>
+    <title>Register form</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form
+        id="form"
+        method="post"
+        action=""
+        onsubmit="return formValidation(this);"
+        novalidate
+      >
+        <h1>New patient form</h1>
+        <h2>Personal details</h2>
+        <div class="if-error">
+          <label for="title">Please select your title*:</label>
+          <select id="title" name="title" required onchange="otherSelected()">
+            <option value="">-Select-</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Ms">Ms</option>
+            <option value="Miss">Miss</option>
+            <option value="Master">Master</option>
+            <option value="Dr">Dr</option>
+            <option value="Other">Other</option>
+          </select>
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error" id="OtherText">
+          <label for="toCheckOther">Other*</label>
+          <input type="text" name="other" required id="toCheckOther" />
+          <span>Error Message</span>
+
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="Surname">Surname*</label>
+          <input
+            type="text"
+            name="surname"
+            id="Surname"
+            required
+            onblur=" isCharactersOnly(this)"
+          />
+          <span>Error Message</span>
+
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="FirstName">FirstName*</label>
+          <input
+            type="text"
+            name="firstname"
+            id="FirstName"
+            required
+            onblur=" isCharactersOnly(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="DateOfBirth">Date of birth*</label>
+          <input
+            type="text"
+            placeholder="dd/mm/yyyy"
+            name="dateofbirth"
+            id="DateOfBirth"
+            onblur="isDate(this)"
+            required
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="PostalAddress">Postal Address</label>
+          <input
+            type="text"
+            name="postaladdress"
+            id="PostalAddress"
+            onblur=" isCharactersOnly2(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="suburb">Suburb</label>
+          <input
+            type="text"
+            name="suburb"
+            id="suburb"
+            onblur=" isCharactersOnly(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="postcode">Postcode</label>
+          <input
+            type="text"
+            name="postcode"
+            id="postcode"
+            onblur=" isPostCode(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+
+        <div class="if-error">
+          <label for="dayTimePhone">Daytime phone</label>
+          <input
+            type="tel"
+            name="daytimephone"
+            id="dayTimePhone"
+            onblur=" isPhone(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="mobile">Mobile</label>
+          <input
+            type="tel"
+            name="mobile"
+            id="mobile"
+            onblur=" isMobile(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="workphone">Work phone</label>
+          <input
+            type="text"
+            name="work"
+            id="workphone"
+            onblur=" isPhone(this)"
+          />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="if-error">
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" onblur=" isEmail(this)" />
+          <span>Error Message</span>
+          <br />
+          <br />
+        </div>
+        <div class="emergencyPersonSection">
+          <h2>Emergency contact</h2>
+          <label for="EmergencyContactPerson">Emergengy contact person</label>
+          <input
+            type="text"
+            name="emergencycontactperson"
+            id="EmergencyContactPerson"
+          />
+          <br />
+          <br />
+          <label for="RelationshipToPatient">Relationship to patient</label>
+          <input
+            type="text"
+            name="relationshiptopatient"
+            id="RelationshipToPatient"
+          />
+          <br />
+          <br />
+          <label for="emergencyMobile">Mobile Number</label>
+          <input type="tel" name="emergencymobile" id="emergencyMobile" />
+          <br />
+          <br />
+          <label for="dayTimePhoneEmergency">Daytime phone</label>
+          <input
+            type="tel"
+            name="daytimephoneemergency"
+            id="dayTimePhoneEmergency"
+          />
+        </div>
+        <div class="emergencyPersonSection2">
+          <h2>Family details</h2>
+          <label for="asAbove">As above</label>
+          <input
+            type="checkbox"
+            name="asabove"
+            id="asAbove"
+            onchange="copyFamily()"
+          />
+          <br />
+          <br />
+          <div class="hide">
+            <label for="EmergencyContactPerson2">Next of kin</label>
+            <input
+              type="text"
+              name="emergencycontactperson2"
+              id="EmergencyContactPerson2"
+            />
+            <br />
+            <br />
+            <label for="RelationshipToPatient2">Relationship to patient</label>
+            <input
+              type="text"
+              name="relationshiptopatient2"
+              id="RelationshipToPatient2"
+            />
+            <br />
+            <br />
+            <label for="emergencyMobile2">Mobile Number</label>
+            <input type="tel" name="emergencymobile2" id="emergencyMobile2" />
+            <br />
+            <br />
+            <label for="dayTimePhoneEmergency2">Daytime phone</label>
+            <input
+              type="tel"
+              name="daytimephoneemergency2"
+              id="dayTimePhoneEmergency2"
+            />
+          </div>
+        </div>
+
+        <input type="submit" value="Submit" />
+        <h4>* are required fields.</h4>
+      </form>
+    </div>
+  </body>
+</html>
